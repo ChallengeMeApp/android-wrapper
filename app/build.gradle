@@ -20,7 +20,7 @@ apply plugin: 'com.android.application'
 
 def twaManifest = [
     applicationId: 'de.challengemeapp.challengeme',
-    hostName: 'test.challengemeapp.de', // The domain being opened in the TWA.
+    hostName: 'app.challengemeapp.de', // The domain being opened in the TWA.
     launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
     name: 'ChallengeMe', // The name shown on the Android Launcher.
     themeColor: '#303F9F', // The color used for the status bar.
