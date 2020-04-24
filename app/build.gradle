@@ -23,9 +23,9 @@ def twaManifest = [
     hostName: 'app.challengemeapp.de', // The domain being opened in the TWA.
     launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
     name: 'ChallengeMe', // The name shown on the Android Launcher.
-    themeColor: '#303F9F', // The color used for the status bar.
-    navigationColor: '#303F9F', // The color used for the navigation bar.
-    backgroundColor: '#bababa', // The color used for the splash screen background.
+    themeColor: '#67a682', // The color used for the status bar.
+    navigationColor: '#67a682', // The color used for the navigation bar.
+    backgroundColor: '#67a682', // The color used for the splash screen background.
     enableNotifications: false, // Set to true to enable notification delegation.
     // Add shortcuts for your app here. Every shortcut must include the following fields:
     // - name: String that will show up in the shortcut.
