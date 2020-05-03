@@ -19,13 +19,13 @@ import groovy.xml.MarkupBuilder;
 apply plugin: 'com.android.application'
 
 def twaManifest = [
-    applicationId: 'de.challengemeapp.challengeme',
+    applicationId: 'de.questophant.questophant',
     hostName: 'app.challengemeapp.de', // The domain being opened in the TWA.
     launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
-    name: 'ChallengeMe', // The name shown on the Android Launcher.
-    themeColor: '#67a682', // The color used for the status bar.
-    navigationColor: '#67a682', // The color used for the navigation bar.
-    backgroundColor: '#67a682', // The color used for the splash screen background.
+    name: 'Questophant', // The name shown on the Android Launcher.
+    themeColor: '#788fb9', // The color used for the status bar.
+    navigationColor: '#788fb9', // The color used for the navigation bar.
+    backgroundColor: '#788fb9', // The color used for the splash screen background.
     enableNotifications: false, // Set to true to enable notification delegation.
     // Add shortcuts for your app here. Every shortcut must include the following fields:
     // - name: String that will show up in the shortcut.
@@ -42,12 +42,13 @@ def twaManifest = [
 
 android {
     compileSdkVersion 29
+    dynamicFeatures = []
     defaultConfig {
         applicationId twaManifest.applicationId
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 3
-        versionName "2.0.0"
+        versionCode 6
+        versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         // The name for the application on the Android Launcher
@@ -110,9 +111,26 @@ android {
         // to be played when removing splash screen. The default is 0 (no animation).
         resValue "integer", "splashScreenFadeOutDuration", twaManifest.splashScreenFadeOutDuration.toString()
     }
+    // Add this block and enable/disable the parameters as follows
+    bundle {
+        density {
+            // Different APKs are generated for devices with different screen densities; true by default.
+            enableSplit true
+        }
+        abi {
+            // Different APKs are generated for devices with different CPU architectures; true by default.
+            enableSplit true
+        }
+        language {
+            // This is disabled so that the App Bundle does NOT split the APK for each language.
+            // We're gonna use the same APK for all languages.
+            enableSplit false
+        }
+    }
     buildTypes {
         release {
             minifyEnabled true
+            shrinkResources true
         }
     }
     compileOptions {
