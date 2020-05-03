@@ -33,7 +33,7 @@ def twaManifest = [
     // - url: Absolute path of the URL to launch the app with (e.g '/create').
     // - icon: Name of the resource in the drawable folder to use as an icon.
     shortcuts: [
-        // Insert shortcuts here, for example:
+        [name: 'Quest erstellen', short_name: 'Neu', url: '/#/challenge/create', icon: 'splash']
         // [name: 'Open SVG', short_name: 'Open', url: '/open', icon: 'splash']
     ],
     // The duration of fade out animation in milliseconds to be played when removing splash screen.
