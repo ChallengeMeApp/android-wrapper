@@ -25,7 +25,7 @@ def twaManifest = [
     name: 'Questophant', // The name shown on the Android Launcher.
     themeColor: '#788fb9', // The color used for the status bar.
     navigationColor: '#788fb9', // The color used for the navigation bar.
-    backgroundColor: '#788fb9', // The color used for the splash screen background.
+    backgroundColor: '#fff', // The color used for the splash screen background.
     enableNotifications: false, // Set to true to enable notification delegation.
     // Add shortcuts for your app here. Every shortcut must include the following fields:
     // - name: String that will show up in the shortcut.
