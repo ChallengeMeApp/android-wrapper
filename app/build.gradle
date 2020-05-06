@@ -18,9 +18,14 @@ import groovy.xml.MarkupBuilder;
 
 apply plugin: 'com.android.application'
 
+def url = 'app.questophant.de';
+if (project.gradle.startParameter.taskNames.any({it.toLowerCase().contains("debug")})) {
+    url = 'test.questophant.de';
+}
+
 def twaManifest = [
     applicationId: 'de.questophant.questophant',
-    hostName: 'app.questophant.de', // The domain being opened in the TWA.
+    hostName: url, // The domain being opened in the TWA.
     launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
     name: 'Questophant', // The name shown on the Android Launcher.
     themeColor: '#788fb9', // The color used for the status bar.
@@ -35,7 +40,6 @@ def twaManifest = [
     shortcuts: [
         [name: 'Herausforderung erstellen', short_name: 'Neu', url: '/#/challenge/create', icon: 'splash'],
         [name: 'Meine Herausforderungen', short_name: 'Meine', url: '/#/challenges', icon: 'splash']
-        // [name: 'Open SVG', short_name: 'Open', url: '/open', icon: 'splash']
     ],
     // The duration of fade out animation in milliseconds to be played when removing splash screen.
     splashScreenFadeOutDuration: 300
