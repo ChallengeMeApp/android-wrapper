@@ -25,7 +25,7 @@ def twaManifest = [
     name: 'Questophant', // The name shown on the Android Launcher.
     themeColor: '#788fb9', // The color used for the status bar.
     navigationColor: '#788fb9', // The color used for the navigation bar.
-    backgroundColor: '#fff', // The color used for the splash screen background.
+    backgroundColor: '#A3B9E0', // The color used for the splash screen background.
     enableNotifications: false, // Set to true to enable notification delegation.
     // Add shortcuts for your app here. Every shortcut must include the following fields:
     // - name: String that will show up in the shortcut.
@@ -33,7 +33,8 @@ def twaManifest = [
     // - url: Absolute path of the URL to launch the app with (e.g '/create').
     // - icon: Name of the resource in the drawable folder to use as an icon.
     shortcuts: [
-        [name: 'Quest erstellen', short_name: 'Neu', url: '/#/challenge/create', icon: 'splash']
+        [name: 'Herausforderung erstellen', short_name: 'Neu', url: '/#/challenge/create', icon: 'splash'],
+        [name: 'Meine Herausforderungen', short_name: 'Meine', url: '/#/challenges', icon: 'splash']
         // [name: 'Open SVG', short_name: 'Open', url: '/open', icon: 'splash']
     ],
     // The duration of fade out animation in milliseconds to be played when removing splash screen.
@@ -47,8 +48,8 @@ android {
         applicationId twaManifest.applicationId
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 8
-        versionName "1.0.1"
+        versionCode 9
+        versionName "1.0.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         // The name for the application on the Android Launcher
